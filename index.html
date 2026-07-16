@@ -3,86 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
   <title>Bento Grid</title>
   <style>
-    * { box-sizing: border-box; }
     body { font-family: 'DM Sans', sans-serif; }
-    .grid-box { box-sizing: border-box; }
+    .bento { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
     @media (min-width: 1024px) {
       .bento {
-        display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: 180px;
-        gap: 1.5rem;
+        grid-template-rows: auto auto auto;
       }
-      .bento > :nth-child(1) { grid-row: span 2; }
-      .bento > :nth-child(2) { grid-column: span 2; }
-      .bento > :nth-child(3) { grid-row: span 2; }
-      .bento > :nth-child(4) { grid-column: 4; }
-      .bento > :nth-child(7) { grid-column: span 2; display: flex; align-items: center; gap: 1.5rem; }
-      .bento > :nth-child(8) { grid-row: 3; }
+      .bento > :nth-child(1) { grid-column: 1; grid-row: 1 / 3; }
+      .bento > :nth-child(2) { grid-column: 2 / 4; }
+      .bento > :nth-child(3) { grid-column: 4; grid-row: 1 / 3; }
+      .bento > :nth-child(4) { grid-column: 2; }
+      .bento > :nth-child(5) { grid-column: 3; }
+      .bento > :nth-child(6) { grid-column: 4; }
+      .bento > :nth-child(7) { grid-column: 1 / 3; }
+      .bento > :nth-child(8) { grid-column: 3 / 5; }
     }
   </style>
 </head>
-<body class="bg-gray-50 min-h-screen flex items-center justify-center p-6">
-  <div class="max-w-7xl mx-auto">
-    <div class="bento space-y-4 lg:space-y-0">
-      <!-- 1. Create with AI -->
-      <div class="p-6 lg:p-8 rounded-2xl bg-yellow-100 text-left">
-        <h2 class="text-3xl lg:text-4xl font-medium leading-tight">Create and schedule content <span class="text-purple-500 italic font-medium">quicker</span></h2>
-        <img src="./assets/images/illustration-create-post.webp" class="w-48 mt-8" alt="create post">
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4 lg:p-8">
+  <div class="max-w-7xl w-full">
+    <div class="bento">
+      <div class="p-6 lg:p-8 rounded-xl bg-yellow-100">
+        <h2 class="text-2xl lg:text-3xl font-medium leading-tight">Create and schedule content <span class="text-purple-500 italic font-medium">quicker</span>.</h2>
+        <img src="./assets/images/illustration-create-post.webp" class="w-36 lg:w-48 mt-8" alt="">
       </div>
 
-      <!-- 2. Social media 10x - PURPLE Large -->
-      <div class="p-6 lg:p-8 rounded-2xl bg-purple-600 text-center text-white">
-        <h2 class="text-5xl lg:text-6xl font-medium leading-tight">Social Media <span class="text-yellow-500">10x</span> Faster with AI</h2>
-        <img src="./assets/images/illustration-five-stars.webp" class="mx-auto mt-6" alt="5 stars">
-        <p class="text-white/80 mt-3 text-lg">Over 4,000 5-star reviews</p>
+      <div class="p-8 lg:p-10 rounded-xl bg-purple-600 text-center text-white">
+        <h2 class="text-4xl lg:text-5xl font-medium leading-tight">Social Media <span class="text-yellow-500">10x</span> <br>Faster with AI</h2>
+        <img src="./assets/images/illustration-five-stars.webp" class="mx-auto mt-6" alt="">
+        <p class="text-white/70 mt-3">Over 4,000 5-star reviews</p>
       </div>
 
-      <!-- 3. Schedule - PURPLE LIGHT -->
-      <div class="p-6 lg:p-8 rounded-2xl bg-purple-100 overflow-hidden">
-        <h2 class="text-3xl lg:text-4xl font-medium leading-tight">Schedule to social media.</h2>
-        <img src="./assets/images/illustration-schedule-posts.webp" class="w-full mt-6" alt="schedule">
-        <p class="text-gray-700 mt-6 text-lg">Optimize post timings to publish content at the perfect time for your audience.</p>
+      <div class="p-6 lg:p-8 rounded-xl bg-purple-100 overflow-hidden">
+        <h2 class="text-2xl lg:text-3xl font-medium leading-tight">Schedule to social media.</h2>
+        <img src="./assets/images/illustration-schedule-posts.webp" class="mt-8 w-full" alt="">
+        <p class="text-gray-700 mt-8">Optimize post timings to publish content at the perfect time for your audience.</p>
       </div>
 
-      <!-- 4. Write content - YELLOW -->
-      <div class="p-6 lg:p-8 rounded-2xl bg-yellow-200">
-        <h2 class="text-3xl lg:text-4xl font-medium leading-tight">Write your content using AI.</h2>
-        <img src="./assets/images/illustration-ai-content.webp" class="w-full mt-6" alt="AI content">
+      <div class="p-6 lg:p-8 rounded-xl bg-yellow-200">
+        <h2 class="text-2xl lg:text-3xl font-medium leading-tight">Write your content using AI.</h2>
+        <img src="./assets/images/illustration-ai-content.webp" class="w-full mt-6" alt="">
       </div>
 
-      <!-- 5. Multiple platforms -->
-      <div class="p-6 lg:p-8 rounded-2xl bg-white">
-        <img src="./assets/images/illustration-multiple-platforms.webp" class="w-full mb-4" alt="platforms">
-        <h2 class="text-3xl lg:text-4xl font-medium leading-tight">Manage multiple accounts and platforms.</h2>
+      <div class="p-6 lg:p-8 rounded-xl bg-white">
+        <img src="./assets/images/illustration-multiple-platforms.webp" class="w-full" alt="">
+        <h2 class="text-2xl lg:text-3xl font-medium leading-tight mt-4">Manage multiple accounts and platforms.</h2>
       </div>
 
-      <!-- 6. Consistent schedule -->
-      <div class="p-6 lg:p-8 rounded-2xl bg-yellow-500">
-        <h2 class="text-3xl lg:text-4xl font-medium leading-tight">Maintain a consistent posting schedule.</h2>
-        <img src="./assets/images/illustration-consistent-schedule.webp" class="w-full mt-4" alt="schedule">
+      <div class="p-6 lg:p-8 rounded-xl bg-yellow-500">
+        <h2 class="text-2xl lg:text-3xl font-medium leading-tight">Maintain a consistent posting schedule.</h2>
+        <img src="./assets/images/illustration-consistent-schedule.webp" class="w-full mt-4" alt="">
       </div>
 
-      <!-- 7. Grow followers - PURPLE Wide -->
-      <div class="p-6 lg:p-8 rounded-2xl bg-purple-600 text-white">
-        <div class="lg:flex lg:items-center lg:gap-8">
-          <h2 class="text-3xl lg:text-4xl font-medium leading-tight lg:max-w-xs">Grow your followers with ease.</h2>
-          <img src="./assets/images/illustration-grow-followers.webp" class="w-48 mx-auto lg:mx-0 mt-4 lg:mt-0" alt="grow">
+      <div class="p-6 lg:p-8 rounded-xl bg-purple-600 text-white lg:flex lg:items-center lg:gap-8">
+        <h2 class="text-2xl lg:text-3xl font-medium leading-tight">Grow your followers <br>with ease.</h2>
+        <img src="./assets/images/illustration-grow-followers.webp" class="w-36 lg:w-44 mt-4 lg:mt-0" alt="">
+      </div>
+
+      <div class="p-6 lg:p-8 rounded-xl bg-white lg:flex lg:flex-col lg:justify-between">
+        <div>
+          <p class="text-4xl lg:text-5xl font-medium">&gt;56%</p>
+          <p class="text-gray-700 mt-1">faster audience growth</p>
         </div>
-      </div>
-
-      <!-- 8. Grow faster -->
-      <div class="p-6 lg:p-8 rounded-2xl bg-white">
-        <h2 class="text-4xl lg:text-5xl font-medium text-gray-900">&gt;56%</h2>
-        <p class="text-gray-700 text-lg mt-2">faster audience growth</p>
-        <img src="./assets/images/illustration-audience-growth.webp" class="w-full mt-6" alt="audience growth">
+        <img src="./assets/images/illustration-audience-growth.webp" class="w-full mt-6" alt="">
       </div>
     </div>
   </div>
