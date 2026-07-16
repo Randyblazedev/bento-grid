@@ -16,8 +16,8 @@ Screenshot
 
 Links
 
-- Solution URL: Add your Frontend Mentor solution URL here
-- Live Site URL: Add your live site URL here
+- Solution URL:https://bento-gri.vercel.app/
+- Live Site URL:https://bento-gri.vercel.app/
 
 My Process
 
