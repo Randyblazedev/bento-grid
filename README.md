@@ -12,7 +12,7 @@ Users should be able to:
 
 Screenshot
 
-"Bento Grid Screenshot" (screenshot.jpg)
+![Bento Grid Screenshot](screenshot.jpg)
 
 Links
 
